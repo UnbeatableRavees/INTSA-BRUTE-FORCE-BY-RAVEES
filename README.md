@@ -18,8 +18,9 @@ Bruteforce attack, For educational purpose only
 ```
 >> git clone https://github.com/UnbeatableRavees/INTSA-BRUTE-FORCE-BY-RAVEES
 >> cd INTSA-BRUTE-FORCE-BY-RAVEES
->> python3 -m pip install requests bs4
->> python3 -m pip install mechanize
+>> pip install --upgrade --force-reinstall requests
+>> pip install --upgrade --force-reinstall urllib3
+>> pip install six
 >> python3  insta-brute-force-ravees.py or python insta-brute-force-ravees2.py
 ```
 
