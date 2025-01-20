@@ -96,7 +96,7 @@ def main():
     session = requests.Session()
     PAYLOAD, COOKIES, session = create_form()
 
-    forindex, password in enumerate(passwords):
+    forindex, password in enumerate(passwords)
         password = password.strip()
         if len(password) < MIN_PASSWORD_LENGTH:
             continue
