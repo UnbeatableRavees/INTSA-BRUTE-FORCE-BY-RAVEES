@@ -16,7 +16,7 @@ Bruteforce attack, For educational purpose only
 
 ## Run commands one by one
 ```
->> git clone https://github.com/UnbeatableRavees/FB-BRUTEFORCE-RAVEES
+>> git clone https://github.com/UnbeatableRavees/INTSA-BRUTE-FORCE-BY-RAVEES
 >> cd Facebook-BruteForce
 >> python3 -m pip install requests bs4
 >> python3 -m pip install mechanize
