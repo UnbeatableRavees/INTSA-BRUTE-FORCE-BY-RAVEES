@@ -92,10 +92,9 @@ def main():
         print(f'[!] Password file "{PASSWORD_FILE}" not found.')
         return
 
-   It seems your script got cut off at the end. Let me complete it for you and provide some additional improvements.
-
+ 
 ### Completed Script
-```python
+
     username = input("[+] Enter the target Instagram username: ")
 
     with open(PASSWORD_FILE, 'r') as file:
